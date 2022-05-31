@@ -14,6 +14,7 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    sudo yum install gcc-c++ make
+    wget https://public.dhe.ibm.com/software/server/POWER/Linux/toolchain/at/redhat/RHEL8/gpg-pubkey-6976a827-5164221b
+    sudo rpm --import gpg-pubkey-6976a827-5164221b
+  displayName: 'Install the necessary packages'
