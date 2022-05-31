@@ -18,7 +18,7 @@ steps:
     sudo apt install build-essential
     wget https://public.dhe.ibm.com/software/server/POWER/Linux/toolchain/at/ubuntu/dists/focal/6976a827.gpg.key
     sudo apt-key add 6976a827.gpg.key
-    sudo sh -c echo 'deb https://public.dhe.ibm.com/software/server/POWER/Linux/toolchain/at/ubuntu bionic at15.0' >> /etc/apt/sources.list
+    echo "deb https://public.dhe.ibm.com/software/server/POWER/Linux/toolchain/at/ubuntu bionic at15.0" | sudo tee /etc/apt/sources.list
     sudo apt-get update
     sudo apt-get install advance-toolchain-at15.0-cross-ppc64le
   displayName: 'Install the necessary packages'
