@@ -21,7 +21,7 @@ steps:
     echo "deb https://public.dhe.ibm.com/software/server/POWER/Linux/toolchain/at/ubuntu bionic at14.0" | sudo tee /etc/apt/sources.list
     sudo apt-get update
     sudo apt-get install advance-toolchain-at14.0-cross-ppc64le
-    export PATH=$PATH:/opt/at15.0/bin/
+    export PATH=$PATH:/opt/at14.0/bin/
     tee -a demo1.cpp <<EOF
     #include <iostream>
     using namespace std;
