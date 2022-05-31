@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: rhel-8
+  vmImage: ubuntu-latest
 
 steps:
 - script: echo Hello, world from the x86 arch!
