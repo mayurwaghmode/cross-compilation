@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-20.04
+  vmImage: ubuntu-18.04
 
 steps:
 - script: echo Hello, world from the x86 arch!
@@ -16,11 +16,11 @@ steps:
 - script: |
     sudo apt-get update
     sudo apt install build-essential
-    wget https://public.dhe.ibm.com/software/server/POWER/Linux/toolchain/at/ubuntu/dists/focal/6976a827.gpg.key
+    wget https://public.dhe.ibm.com/software/server/POWER/Linux/toolchain/at/ubuntu/dists/bionic/6976a827.gpg.key
     sudo apt-key add 6976a827.gpg.key
-    echo "deb https://public.dhe.ibm.com/software/server/POWER/Linux/toolchain/at/ubuntu focal at15.0" | sudo tee /etc/apt/sources.list
+    echo "deb https://public.dhe.ibm.com/software/server/POWER/Linux/toolchain/at/ubuntu bionic at14.0" | sudo tee /etc/apt/sources.list
     sudo apt-get update
-    sudo apt-get install advance-toolchain-at15.0-cross-ppc64le
+    sudo apt-get install advance-toolchain-at14.0-cross-ppc64le
     export PATH=$PATH:/opt/at15.0/bin/
     tee -a demo1.cpp <<EOF
     #include <iostream>
