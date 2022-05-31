@@ -21,4 +21,17 @@ steps:
     echo "deb https://public.dhe.ibm.com/software/server/POWER/Linux/toolchain/at/ubuntu focal at15.0" | sudo tee /etc/apt/sources.list
     sudo apt-get update
     sudo apt-get install advance-toolchain-at15.0-cross-ppc64le
+    export PATH=$PATH:/opt/at15.0/bin/
+    tee -a demo1.cpp <<EOF
+    #include <iostream>
+    using namespace std;
+    int main()
+    {
+        cout << "Hello World from C++";
+        return 0;
+    }
+    EOF
+    g++ demo1.cpp -o demo1-x86_64
+    file demo1-x86_64
+    ./demo1-x86_64
   displayName: 'Install the necessary packages'
