@@ -7,14 +7,14 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: ubuntu-18.04
 
 steps:
 - script: echo Hello, world from the x86 arch!
   displayName: 'Run a one-line script'
 
 - script: |
-    sudo yum install gcc-c++ make
-    wget https://public.dhe.ibm.com/software/server/POWER/Linux/toolchain/at/redhat/RHEL8/gpg-pubkey-6976a827-5164221b
-    sudo rpm --import gpg-pubkey-6976a827-5164221b
+    sudo apt install build-essential
+    wget https://public.dhe.ibm.com/software/server/POWER/Linux/toolchain/at/ubuntu/dists/focal/6976a827.gpg.key
+    sudo apt-key add 6976a827.gpg.key
   displayName: 'Install the necessary packages'
